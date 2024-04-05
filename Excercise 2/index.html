@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title> Factorial Program</title>
+</head>
+<body>
+<form method="POST">
+    <div class = "container1">
+
+<label>Enter a number       :     </label>
+<input type="text" name="number" />
+<input type="submit" name="submit" value="Submit" />
+</form>
+<?php
+
+function Factorial_Function($input)
+{
+
+if($input <=1) {
+return 1;
+}
+// else do a recursive call and continue to find the factorial
+return $input * Factorial_Function($input-1); 
+}
+if(!empty($_POST['number'])){
+$input = $_POST['number'];
+
+echo '<br>'. 'The factorial of the number '.$input.' is ' . Factorial_Function($input);
+}
+<br>
+echo "<h2>Student Names:</h2>";
+$students = array("Student1", "Student2", "Student3", "Student4", "Student5","Student6","Student7");
+
+
+foreach ($students as $student) {
+    echo "<p>$student</p>";
+}
+?>
+</div>
+
+
+
+
+
+</body>
+</html>
